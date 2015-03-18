@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lamg="ja">
+<head>
+    <meta charset="utf-8">
+    <title>jQueryの練習</title>
+    <style>
+        .myStyle {
+            border:5px solid green;
+            font-size:48px;
+        }
+    </style>
+</head>
+<body>
+    <p>jQueryの練習</p>
+    <button>Add!</button>
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+        /* document.ready(function{
+
+        }); */
+        $(function() {
+
+            $('button').click(function(){
+                var p = $('<p>').text('vanish!').addClass('vanish');
+                $(this).before(p);
+            });
+
+            $('body').on('click', '.vanish', function() {
+                $(this).remove();
+            });
+
+        });
+    </script>
+</body>
+</html>
